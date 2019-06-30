@@ -20,9 +20,11 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_gutenberg_frontend_s
 function enqueue_gutenberg_frontend_styles() {
 
 	$prefix = CHILD_TEXT_DOMAIN;
+	$root_dir = CHILD_URL . '/assets';
+
 	wp_enqueue_style(
 		$prefix . '-gutenberg',
-		CHILD_THEME_DIR . '/src/components/gutenberg/front-end.css',
+		$root_dir . '/css/front-end.css',
 		array( CHILD_TEXT_DOMAIN ),
 		CHILD_THEME_VERSION
 	);
