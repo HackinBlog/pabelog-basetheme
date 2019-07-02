@@ -11,6 +11,10 @@
 
 namespace Pabelog\Basetheme;
 
+// Starts the genesis.
+require_once get_template_directory() . '/lib/init.php';
+
 include_once( __DIR__ . '/src/init.php' );
 
 include_once( __DIR__ . '/src/functions/autoload.php' );
+

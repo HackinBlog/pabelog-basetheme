@@ -48,3 +48,79 @@ function remove_customizer_settings( array $config ) {
 
 // Displays custom logo.
 add_action( 'genesis_site_title', 'the_custom_logo', 0 );
+
+
+remove_action('genesis_header', 'genesis_do_header');
+add_action( 'genesis_header', __NAMESPACE__ . '\child_header' );
+/**
+ * Echo the child header, including the #title-area div, along with #title and #description, as well as the .widget-area.
+ *
+ * Does the `genesis_site_title`, `genesis_site_description` and `genesis_header_right` actions.
+ *
+ * @since 1.0.1
+ *
+ * @global $wp_registered_sidebars Holds all of the registered sidebars.
+ */
+function child_header() {
+
+	global $wp_registered_sidebars;
+
+	genesis_markup(
+		array(
+			'open'    => '<div %s>',
+			'context' => 'title-area',
+		)
+	);
+
+	/**
+	 * Fires inside the title area, before the site description hook.
+	 *
+	 * @since 1.0.1
+	 */
+	do_action( 'genesis_site_title' );
+
+	/**
+	 * Fires inside the title area, after the site title hook.
+	 *
+	 * @since 1.0.1
+	 */
+	do_action( 'genesis_site_description' );
+
+	genesis_markup(
+		array(
+			'close'   => '</div>',
+			'context' => 'title-area',
+		)
+	);
+
+	if ( has_action( 'genesis_header_right' ) || ( isset( $wp_registered_sidebars['header-right'] ) && is_active_sidebar( 'header-right' ) ) ) {
+
+		genesis_markup(
+			array(
+				'open'    => '<div %s>',
+				'context' => 'header-widget-area',
+			)
+		);
+
+		/**
+		 * Fires inside the header widget area wrapping markup, before the Header Right widget area.
+		 *
+		 * @since 1.5.0
+		 */
+		do_action( 'genesis_header_right' );
+		add_filter( 'wp_nav_menu_args', 'genesis_header_menu_args' );
+		add_filter( 'wp_nav_menu', 'genesis_header_menu_wrap' );
+		dynamic_sidebar( 'header-right' );
+		remove_filter( 'wp_nav_menu_args', 'genesis_header_menu_args' );
+		remove_filter( 'wp_nav_menu', 'genesis_header_menu_wrap' );
+
+		genesis_markup(
+			array(
+				'close'   => '</div>',
+				'context' => 'header-widget-area',
+			)
+		);
+
+	}
+
+}

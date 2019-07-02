@@ -85,3 +85,49 @@ namespace Pabelog\Basetheme\Functions;
 //	return $localized_script_args;
 //
 //}
+
+
+if ( ! is_admin() ) {
+	add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\remove_frontend_scripts' );
+}
+/**
+ * Remove unnecessary script from theme.
+ *
+ * @return void
+ * @since 1.0.1
+ */
+function remove_frontend_scripts() {
+
+	$fe_scripts = array(
+		'jquery',
+		'wp-embed',
+	);
+
+	foreach ( $fe_scripts as $fe_script ) {
+		wp_deregister_script( $fe_script );
+	}
+
+	remove_frontend_emoji();
+
+}
+
+function remove_frontend_emoji() {
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+}
+
+if ( ! is_admin() ) {
+	add_action( 'wp_print_styles', __NAMESPACE__ . '\remove_frontend_styles' );
+}
+/**
+ *
+ * @return void
+ * @since 1.0.1
+ */
+function remove_frontend_styles() {
+	$fe_styles = array();
+
+	foreach ( $fe_styles as $fe_style ) {
+		wp_deregister_style( $fe_style );
+	}
+}
