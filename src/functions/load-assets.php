@@ -131,3 +131,18 @@ function remove_frontend_styles() {
 		wp_deregister_style( $fe_style );
 	}
 }
+
+add_action( 'wp_print_styles', __NAMESPACE__ . '\add_frontend_styles' );
+/**
+ *
+ * @return void
+ * @since 1.0.1
+ */
+function add_frontend_styles() {
+	$fe_styles = array( 'tachyons' );
+	$css_path = CHILD_THEME_URI . "/assets/css/";
+
+	foreach ( $fe_styles as $fe_style ) {
+		wp_enqueue_style( $fe_style, $css_path . $fe_style . ".css" );
+	}
+}

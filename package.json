@@ -18,7 +18,12 @@
   "homepage": "https://github.com/HackinBlog/pabelog-basetheme#readme",
   "devDependencies": {
     "browser-sync": "^2.26.7",
+    "del": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2"
+  },
+  "dependencies": {
+    "tachyons": "^4.11.1",
+    "tachyons-sass": "^4.9.5"
   }
 }

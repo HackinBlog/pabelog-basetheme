@@ -8,6 +8,7 @@
  * @link https://www.pabelog.com
  * @license MIT
  */
+
 namespace Pabelog\Basetheme\Structure;
 
 
@@ -50,8 +51,8 @@ function remove_customizer_settings( array $config ) {
 add_action( 'genesis_site_title', 'the_custom_logo', 0 );
 
 
-remove_action('genesis_header', 'genesis_do_header');
-add_action( 'genesis_header', __NAMESPACE__ . '\child_header' );
+remove_action( 'genesis_header', 'genesis_do_header' );
+add_action( 'genesis_header', __NAMESPACE__ . '\do_child_header' );
 /**
  * Echo the child header, including the #title-area div, along with #title and #description, as well as the .widget-area.
  *
@@ -61,9 +62,99 @@ add_action( 'genesis_header', __NAMESPACE__ . '\child_header' );
  *
  * @global $wp_registered_sidebars Holds all of the registered sidebars.
  */
-function child_header() {
+function do_child_header() {
 
-	global $wp_registered_sidebars;
+	$child_header_attrs = array(
+		'class' => 'header-container flex justify-between-ns items-center',
+	);
+
+	genesis_markup(
+		array(
+			'open'    => sprintf( '<div %s>', genesis_attr( 'header-container', $child_header_attrs ) ),
+			'context' => 'header-container'
+		)
+	);
+
+	do_header_first();
+
+	do_header_second();
+
+	genesis_markup(
+		array(
+			'close'    => '</div>',
+			'context' => 'header-container'
+		)
+	);
+
+}
+
+/**
+ *
+ * Create Left header on Desktop or top one on Mobile
+ *
+ * @return void
+ * @since 1.0.1
+ */
+function do_header_first() {
+
+	$header_first_attrs = array(
+		'class' => 'header-first flex items-center w-100 w-20-ns',
+	);
+
+	genesis_markup(
+		array(
+			'open' => sprintf( '<div %s>', genesis_attr( 'header-first', $header_first_attrs ) ),
+			'context' => 'header-first',
+		)
+	);
+
+	do_child_main_menu();
+
+	do_title_area();
+
+	genesis_markup(
+		array(
+			'open' => '</div>',
+			'context' => 'header-first',
+		)
+	);
+
+}
+
+/**
+ *
+ * Create Right Header on Desktop or after top one on Mobile
+ *
+ * @return void
+ * @since 1.0.1
+ */
+function do_header_second() {
+
+	genesis_markup(
+		array(
+			'open' => '<div %s>',
+			'context' => 'header-second',
+		)
+	);
+
+	// TODO: search input here
+
+	genesis_markup(
+		array(
+			'open' => '</div>',
+			'context' => 'header-second',
+		)
+	);
+
+}
+
+/**
+ * Create title area
+ *
+ * @return void
+ * @since 1.0.1
+ */
+function do_title_area() {
 
 	genesis_markup(
 		array(
@@ -92,35 +183,36 @@ function child_header() {
 			'context' => 'title-area',
 		)
 	);
+}
 
-	if ( has_action( 'genesis_header_right' ) || ( isset( $wp_registered_sidebars['header-right'] ) && is_active_sidebar( 'header-right' ) ) ) {
+/**
+ *
+ * Create hamburger menu to the header
+ *
+ * @return  void
+ * @since 1.0.1
+ */
+function do_child_main_menu() {
 
-		genesis_markup(
-			array(
-				'open'    => '<div %s>',
-				'context' => 'header-widget-area',
-			)
-		);
+	$child_main_menu_attrs = array(
+		'id'    => 'child_main_menu',
+		'class' => 'icon-menu f2 mr3 pointer',
+	);
 
-		/**
-		 * Fires inside the header widget area wrapping markup, before the Header Right widget area.
-		 *
-		 * @since 1.5.0
-		 */
-		do_action( 'genesis_header_right' );
-		add_filter( 'wp_nav_menu_args', 'genesis_header_menu_args' );
-		add_filter( 'wp_nav_menu', 'genesis_header_menu_wrap' );
-		dynamic_sidebar( 'header-right' );
-		remove_filter( 'wp_nav_menu_args', 'genesis_header_menu_args' );
-		remove_filter( 'wp_nav_menu', 'genesis_header_menu_wrap' );
 
-		genesis_markup(
-			array(
-				'close'   => '</div>',
-				'context' => 'header-widget-area',
-			)
-		);
+	genesis_markup(
+		array(
+			'open'    => sprintf( '<i %s>', genesis_attr( 'child-main-menu', $child_main_menu_attrs ) ),
+			'context' => 'child-main-menu',
+		)
+	);
 
-	}
+
+	genesis_markup(
+		array(
+			'open'    => '</i>',
+			'context' => 'child-main-menu',
+		)
+	);
 
 }
