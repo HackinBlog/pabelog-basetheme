@@ -43,6 +43,7 @@ function load_non_admin_files() {
 		'/functions/formatting.php',
 		'/functions/load-assets.php',
 		'/functions/markup.php',
+		'/functions/widgets.php',
 		'/structure/archive.php',
 		'/structure/comments.php',
 		'/structure/footer.php',
@@ -51,7 +52,8 @@ function load_non_admin_files() {
 		'/structure/post.php',
 		'/structure/sidebar.php',
 		'/components/customizer/customizer.php',
-		'/components/gutenberg/init.php'
+		'/components/gutenberg/init.php',
+		'/admin/theme-options.php',
 	);
 
 	load_specified_files( $filenames );

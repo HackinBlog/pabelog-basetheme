@@ -50,8 +50,22 @@ function remove_customizer_settings( array $config ) {
 // Displays custom logo.
 add_action( 'genesis_site_title', 'the_custom_logo', 0 );
 
-
+// Remove default genesis header
 remove_action( 'genesis_header', 'genesis_do_header' );
+
+add_filter( 'genesis_attr_site-header', __NAMESPACE__ . '\child_header_attr');
+/**
+ *
+ * Add additional attributes to child_header
+ * @since 1.0.1
+ * @return $attribute Array
+ */
+function child_header_attr( $attributes ) {
+	$attributes['class'] .= ' bb bw4 b--gold';
+	return $attributes;
+}
+
+
 add_action( 'genesis_header', __NAMESPACE__ . '\do_child_header' );
 /**
  * Echo the child header, including the #title-area div, along with #title and #description, as well as the .widget-area.
@@ -81,7 +95,7 @@ function do_child_header() {
 
 	genesis_markup(
 		array(
-			'close'    => '</div>',
+			'close'   => '</div>',
 			'context' => 'header-container'
 		)
 	);
@@ -103,7 +117,7 @@ function do_header_first() {
 
 	genesis_markup(
 		array(
-			'open' => sprintf( '<div %s>', genesis_attr( 'header-first', $header_first_attrs ) ),
+			'open'    => sprintf( '<div %s>', genesis_attr( 'header-first', $header_first_attrs ) ),
 			'context' => 'header-first',
 		)
 	);
@@ -114,7 +128,7 @@ function do_header_first() {
 
 	genesis_markup(
 		array(
-			'open' => '</div>',
+			'open'    => '</div>',
 			'context' => 'header-first',
 		)
 	);
@@ -130,18 +144,22 @@ function do_header_first() {
  */
 function do_header_second() {
 
+	$header_second_attrs = array(
+		'class' => 'header-second flex dn db-ns w-30-ns',
+	);
+
 	genesis_markup(
 		array(
-			'open' => '<div %s>',
+			'open'    => sprintf( '<div %s>', genesis_attr( 'header-second', $header_second_attrs ) ),
 			'context' => 'header-second',
 		)
 	);
 
-	// TODO: search input here
+	get_search_form();
 
 	genesis_markup(
 		array(
-			'open' => '</div>',
+			'open'    => '</div>',
 			'context' => 'header-second',
 		)
 	);

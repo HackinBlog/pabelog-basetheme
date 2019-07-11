@@ -87,7 +87,7 @@ namespace Pabelog\Basetheme\Functions;
 //}
 
 
-if ( ! is_admin() ) {
+if ( ! is_admin_bar_showing() ) {
 	add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\remove_frontend_scripts' );
 }
 /**
@@ -139,7 +139,7 @@ add_action( 'wp_print_styles', __NAMESPACE__ . '\add_frontend_styles' );
  * @since 1.0.1
  */
 function add_frontend_styles() {
-	$fe_styles = array( 'tachyons' );
+	$fe_styles = array( 'tachyons', 'theme/style' );
 	$css_path = CHILD_THEME_URI . "/assets/css/";
 
 	foreach ( $fe_styles as $fe_style ) {

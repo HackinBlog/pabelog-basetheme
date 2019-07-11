@@ -20,10 +20,10 @@ namespace Pabelog\Basetheme\Structure;
 // Removes output of primary navigation right extras.
 remove_filter( 'genesis_nav_items', 'genesis_nav_right', 10, 2 );
 remove_filter( 'wp_nav_menu_items', 'genesis_nav_right', 10, 2 );
-
+//remove_theme_support( 'genesis-menus' );
 
 // Repositions primary navigation menu.
-// remove_action( 'genesis_after_header', 'genesis_do_nav' );
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
 // add_action( 'genesis_header', 'genesis_do_nav', 12 );
 
 // Repositions the secondary navigation menu.

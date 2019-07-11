@@ -11,7 +11,7 @@
 
 namespace Pabelog\Basetheme;
 
-add_action( 'genesis_setup', __NAMESPACE__ . '\setup_child_theme', 15 );
+add_action( 'init', __NAMESPACE__ . '\setup_child_theme' );
 /**
  * Setup genesis child theme, removes unwanted features
  *
@@ -128,13 +128,14 @@ function adds_theme_supports() {
 		'responsive-embeds'               => null,
 	);
 
-	$config_files   = array(
+	$config_files = array(
 		'html5',
 		'genesis-accessibility',
 		'block-editor-settings',
 		'custom_logo',
 		'menus',
-		'child_theme_settings'
+		'child_theme_settings',
+		'genesis-structural-wraps',
 	);
 
 	foreach ( $config_files as $config_name ) {

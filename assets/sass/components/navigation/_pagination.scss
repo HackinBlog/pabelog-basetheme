@@ -4,6 +4,13 @@
 .pagination {
   clear: both;
   margin: 60px 0;
+  width: 100%;
+  display: flex;
+
+}
+
+.archive-pagination ul {
+  margin: 0 auto;
 }
 
 .adjacent-entry-pagination {

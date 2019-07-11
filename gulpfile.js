@@ -3,15 +3,15 @@ const sass = require('gulp-sass');
 const del = require('del');
 
 gulp.task('sass', function () {
-    return gulp.src('assets/sass/style.scss')
+    return gulp.src('assets/sass/**/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest('./'))
+        .pipe(gulp.dest('./assets/css/theme'))
 });
 
 gulp.task('clean', () => {
     return del([
-        'style.css',
-        'assets/css/tachyons.css'
+        'assets/css/tachyons.css',
+        'assets/css/theme',
     ]);
 });
 
@@ -26,7 +26,7 @@ gulp.task('tachyons', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch('assets/sass/style.scss', gulp.series('sass'));
+    gulp.watch('assets/sass/**/*.scss', gulp.series('sass'));
 });
 
 gulp.task('default', gulp.series(['clean', 'tachyons-sass', 'sass', 'tachyons', 'watch']));

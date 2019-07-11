@@ -3,6 +3,8 @@
 
 .search-form {
   overflow: hidden;
+  width: 100%;
+  margin: 0;
 }
 
 .entry-content .search-form {
@@ -10,12 +12,27 @@
   width: 50%;
 }
 
+.header-second .search-form:before {
+  position: absolute;
+  line-height: 1.4;
+  pointer-events: none;
+  color: #333;
+  content: "\e906";
+  font-family: "pabelog-icons-set" !important;
+  font-size: 30px;
+  margin: 5px;
+  margin-left: 16px;
+  float: none;
+  opacity: 0.3;
+}
+
 .post-password-form input[type="submit"],
 .search-form input[type="submit"] {
   margin-top: 10px;
 }
 
-.widget_search input[type="submit"] {
+.widget_search input[type="submit"],
+.header-second input[type="submit"] {
   border: 0;
   clip: rect(0, 0, 0, 0);
   height: 1px;
@@ -23,4 +40,8 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.search-form input[type="search"] {
+  padding-left: 65px;
 }

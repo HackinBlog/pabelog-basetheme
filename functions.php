@@ -18,3 +18,4 @@ include_once( __DIR__ . '/src/init.php' );
 
 include_once( __DIR__ . '/src/functions/autoload.php' );
 
+include_once( __DIR__ . '/src/setup.php');

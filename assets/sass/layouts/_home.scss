@@ -1,0 +1,26 @@
+/***
+ *
+ * Used for home contents
+ *
+ */
+
+@import "../utilities/variables/widths";
+@import "../utilities/variables/breakpoints";
+
+.entries-box {
+  margin-top: -100px;
+}
+
+.main-content {
+  background-color: white;
+  background-image: linear-gradient(white, white, #ddd);
+}
+
+.screen-container {
+  clear: both;
+  margin: 0 auto;
+
+  @media only screen and (min-width: $desktop-breakpoint) {
+    max-width: $max-width-layout;
+  }
+}
