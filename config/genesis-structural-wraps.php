@@ -15,7 +15,7 @@ return array(
 	'header',
 	'nav',
 	'subnav',
-	//'site-inner',
-	'footer-widgets',
-	'footer',
+	// 'site-inner',
+	// 'footer-widgets',
+	// 'footer',
 );

@@ -1,11 +1,19 @@
 /* Footer Widgets
 ---------------------------------------------------------------------------- */
 
+@import "../../utilities/variables/colors";
+
+//.footer-widgets {
+//  border-top: 1px solid #eee;
+//  background-color: #fff;
+//  clear: both;
+//  padding: 60px 0;
+//}
+
 .footer-widgets {
-  border-top: 1px solid #eee;
-  background-color: #fff;
+  background-color: $footerWidgets__backgroundColor;
+  color: $footerWidgets__color;
   clear: both;
-  padding: 60px 0;
 }
 
 .footer-widgets .wrap {

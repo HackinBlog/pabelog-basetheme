@@ -2,11 +2,7 @@
 ---------------------------------------------------------------------------- */
 .site-footer {
   background-color: #fff;
-  border-top: 1px solid #eee;
-  font-size: 15px;
-  line-height: 1.5;
-  padding: 30px;
-  text-align: center; }
+  width: 100%; }
 
 .site-footer p {
   margin-bottom: 0; }
@@ -14,10 +10,9 @@
 /* Footer Widgets
 ---------------------------------------------------------------------------- */
 .footer-widgets {
-  border-top: 1px solid #eee;
-  background-color: #fff;
-  clear: both;
-  padding: 60px 0; }
+  background-color: #3f3f3f;
+  color: #fff;
+  clear: both; }
 
 .footer-widgets .wrap {
   margin-left: auto;

@@ -12,6 +12,45 @@
 namespace Pabelog\Basetheme\Structure;
 
 
+// Remove default genesis header
+remove_action( 'genesis_header', 'genesis_do_header' );
+
+add_action( 'genesis_header', __NAMESPACE__ . '\do_child_header' );
+/**
+ * Echo the child header, including the #title-area div, along with #title and #description, as well as the .widget-area.
+ *
+ * Does the `genesis_site_title`, `genesis_site_description` and `genesis_header_right` actions.
+ *
+ * @since 1.0.1
+ *
+ * @global $wp_registered_sidebars Holds all of the registered sidebars.
+ */
+function do_child_header() {
+
+	$child_header_attrs = array(
+		'class' => 'header-container flex justify-between-ns items-center',
+	);
+
+	genesis_markup(
+		array(
+			'open'    => sprintf( '<div %s>', genesis_attr( 'header-container', $child_header_attrs ) ),
+			'context' => 'header-container'
+		)
+	);
+
+	do_header_first();
+
+	do_header_second();
+
+	genesis_markup(
+		array(
+			'close'   => '</div>',
+			'context' => 'header-container'
+		)
+	);
+
+}
+
 add_action( 'genesis_theme_settings_metaboxes', __NAMESPACE__ . '\remove_metaboxes_header' );
 /**
  * Removes output of unused admin settings metaboxes.
@@ -50,9 +89,6 @@ function remove_customizer_settings( array $config ) {
 // Displays custom logo.
 add_action( 'genesis_site_title', 'the_custom_logo', 0 );
 
-// Remove default genesis header
-remove_action( 'genesis_header', 'genesis_do_header' );
-
 add_filter( 'genesis_attr_site-header', __NAMESPACE__ . '\child_header_attr');
 /**
  *
@@ -63,43 +99,6 @@ add_filter( 'genesis_attr_site-header', __NAMESPACE__ . '\child_header_attr');
 function child_header_attr( $attributes ) {
 	$attributes['class'] .= ' bb bw4 b--gold';
 	return $attributes;
-}
-
-
-add_action( 'genesis_header', __NAMESPACE__ . '\do_child_header' );
-/**
- * Echo the child header, including the #title-area div, along with #title and #description, as well as the .widget-area.
- *
- * Does the `genesis_site_title`, `genesis_site_description` and `genesis_header_right` actions.
- *
- * @since 1.0.1
- *
- * @global $wp_registered_sidebars Holds all of the registered sidebars.
- */
-function do_child_header() {
-
-	$child_header_attrs = array(
-		'class' => 'header-container flex justify-between-ns items-center',
-	);
-
-	genesis_markup(
-		array(
-			'open'    => sprintf( '<div %s>', genesis_attr( 'header-container', $child_header_attrs ) ),
-			'context' => 'header-container'
-		)
-	);
-
-	do_header_first();
-
-	do_header_second();
-
-	genesis_markup(
-		array(
-			'close'   => '</div>',
-			'context' => 'header-container'
-		)
-	);
-
 }
 
 /**

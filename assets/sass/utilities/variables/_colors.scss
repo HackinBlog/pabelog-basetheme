@@ -4,6 +4,7 @@
 
 $white: #fff;
 $black: #111;
+$chocolate_gray: #3f3f3f;
 
 $base_color: #333;
 
@@ -18,5 +19,9 @@ $primaryNav__linkColor: $nav__linkColor;
 $secondaryNav__backgroundColor: $white;
 $secondaryNav__linkColor: $nav__linkColor;
 
+// ===========================
 
 $siteFooter__backgroundColor: #eee;
+$footerWidgets__backgroundColor: $chocolate_gray;
+$footerWidgets__color: $white;
+

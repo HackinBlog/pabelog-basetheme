@@ -22,3 +22,15 @@ genesis_register_sidebar( array(
 	'name'        => __( 'Homepage Banner Widget', CHILD_TEXT_DOMAIN ),
 	'description' => __( 'Secondary widget to display banner', CHILD_TEXT_DOMAIN ),
 ) );
+
+genesis_register_sidebar( array(
+	'id'          => 'footer-widget-1',
+	'name'        => __( 'Footer Widget 1', CHILD_TEXT_DOMAIN ),
+	'description' => __( 'The widget intended for email action on footer', CHILD_TEXT_DOMAIN ),
+) );
+
+genesis_register_sidebar( array(
+	'id'          => 'footer-widget-2',
+	'name'        => __( 'Footer Widget 2', CHILD_TEXT_DOMAIN ),
+	'description' => __( 'The widget used for static site navigation', CHILD_TEXT_DOMAIN ),
+) );
