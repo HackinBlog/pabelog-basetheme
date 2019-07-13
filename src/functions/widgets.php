@@ -11,6 +11,10 @@
 
 namespace Pabelog\Basetheme\Functions;
 
+unregister_sidebar( 'sidebar' );
+
+unregister_sidebar( 'sidebar-alt' );
+
 genesis_register_sidebar( array(
 	'id'          => 'home-page-widget-1',
 	'name'        => __( 'Homepage Email Widget', CHILD_TEXT_DOMAIN ),

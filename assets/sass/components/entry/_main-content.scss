@@ -1,0 +1,34 @@
+/*
+ * The main content component used in home page (usually)
+ */
+
+@import "../../utilities/variables/colors.scss";
+
+a.home-cat-link {
+  text-decoration: none;
+}
+
+.underline-red {
+  background-image: linear-gradient($white 70%, $microsoft_red 10%);;
+  margin: 0 auto;
+}
+
+.underline-green {
+  background-image: linear-gradient($white 70%, $microsoft_green 10%);;
+  margin: 0 auto;
+}
+
+.underline-blue {
+  background-image: linear-gradient($white 70%, $microsoft_blue 10%);;
+  margin: 0 auto;
+}
+
+.underline-yellow {
+  background-image: linear-gradient($white 70%, $microsoft_yellow 10%);;
+  margin: 0 auto;
+}
+
+.underline-red:hover, .underline-green:hover, .underline-blue:hover, .underline-yellow:hover {
+  background-image: linear-gradient($white 100%, $white 100%);
+}
+

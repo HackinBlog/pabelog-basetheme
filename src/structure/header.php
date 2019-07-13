@@ -86,9 +86,6 @@ function remove_customizer_settings( array $config ) {
 
 }
 
-// Displays custom logo.
-add_action( 'genesis_site_title', 'the_custom_logo', 0 );
-
 add_filter( 'genesis_attr_site-header', __NAMESPACE__ . '\child_header_attr');
 /**
  *
@@ -97,7 +94,7 @@ add_filter( 'genesis_attr_site-header', __NAMESPACE__ . '\child_header_attr');
  * @return $attribute Array
  */
 function child_header_attr( $attributes ) {
-	$attributes['class'] .= ' bb bw4 b--gold';
+	$attributes['class'] .= ' bb bw3 b--gold';
 	return $attributes;
 }
 

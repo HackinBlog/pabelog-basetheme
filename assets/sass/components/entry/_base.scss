@@ -2,6 +2,8 @@
 // Base Entry
 // ============================
 
+@import "../../utilities/variables/colors";
+
 @media only screen and (min-width: 960px) {
   .content {
     float: left;
@@ -27,4 +29,16 @@
     margin-bottom: 60px;
   }
 
+}
+
+a.hover-link-1:hover {
+  color: $google_red;
+}
+
+a.hover-link-2:hover {
+  color: $absolute-black;
+}
+
+a.hover-link-3:hover {
+  color: $google_yellow;
 }

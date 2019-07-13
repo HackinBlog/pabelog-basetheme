@@ -53,6 +53,7 @@ function load_non_admin_files() {
 		'/structure/sidebar.php',
 		'/components/customizer/customizer.php',
 		'/components/gutenberg/init.php',
+		'/paged.php',
 		'/admin/theme-options.php',
 	);
 

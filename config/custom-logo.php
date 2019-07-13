@@ -12,8 +12,10 @@
 namespace Pabelog\Basetheme\Config;
 
 return array(
-	'height'      => 120,
-	'width'       => 700,
-	'flex-height' => true,
-	'flex-width'  => true,
+	'height'          => 120,
+	'width'           => 400,
+	'flex-height'     => true,
+	'header-selector' => '.site-title a',
+	'header-text'     => false,
+	'flex-width'      => true,
 );

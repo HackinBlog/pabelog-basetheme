@@ -24,8 +24,9 @@ function setup_child_theme() {
 	unregister_genesis_callbacks();
 	adds_theme_supports();
 	setup_gutenberg_support();
-	adds_new_image_sizes();
+	register_new_image_sizes();
 	add_filter( 'genesis_seo_title', __NAMESPACE__ . '\setup_header_title', 10, 3 );
+	add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 }
 
 add_filter( 'genesis_theme_settings_defaults', __NAMESPACE__ . '\set_theme_setting_defaults', 15 );
@@ -106,6 +107,8 @@ function unregister_genesis_callbacks() {
 	unregister_sidebar( 'sidebar-alt' );
 
 	// Removes site layouts.
+	genesis_unregister_layout( 'content-sidebar' );
+	genesis_unregister_layout( 'sidebar-content' );
 	genesis_unregister_layout( 'content-sidebar-sidebar' );
 	genesis_unregister_layout( 'sidebar-content-sidebar' );
 	genesis_unregister_layout( 'sidebar-sidebar-content' );
@@ -157,9 +160,9 @@ function adds_theme_supports() {
  * @return void
  * @since 1.0.0
  */
-function adds_new_image_sizes() {
+function register_new_image_sizes() {
 
-	$config = genesis_get_config( 'sidebar-featured' );
+	$config = genesis_get_config( 'images-size' );
 
 	foreach ( $config as $name => $args ) {
 		$crop = array_key_exists( 'crop', $args ) ? $args['crop'] : false;

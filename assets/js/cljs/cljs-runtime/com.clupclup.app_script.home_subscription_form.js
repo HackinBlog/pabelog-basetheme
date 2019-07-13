@@ -1,0 +1,14 @@
+goog.provide('com.clupclup.app_script.home_subscription_form');
+goog.require('cljs.core');
+goog.require('reagent.core');
+goog.require('re_frame.core');
+goog.require('com.clupclup.app_script.base.render');
+com.clupclup.app_script.home_subscription_form.Root = (function com$clupclup$app_script$home_subscription_form$Root(){
+return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"className","className",-1983287057),"flex flex-column flex-row-ns bg-gold w-100"], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"className","className",-1983287057),""], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"label","label",1718410804),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"className","className",-1983287057),""], null),"Update teknologi terkini langsung ke email Anda! All"], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"className","className",-1983287057),"flex flex-row"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"type","type",1174270348),"email",new cljs.core.Keyword(null,"placeholder","placeholder",-104873083),"jhon.snow@gmail.com"], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"type","type",1174270348),"submit",new cljs.core.Keyword(null,"value","value",305978217),"Daftar"], null)], null)], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"className","className",-1983287057),""], null)], null)], null);
+});
+com.clupclup.app_script.home_subscription_form.render = (function com$clupclup$app_script$home_subscription_form$render(){
+return com.clupclup.app_script.base.render.render("custom_html-4",com.clupclup.app_script.home_subscription_form.Root);
+});
+goog.exportSymbol('com.clupclup.app_script.home_subscription_form.render', com.clupclup.app_script.home_subscription_form.render);
+
+//# sourceMappingURL=com.clupclup.app_script.home_subscription_form.js.map
