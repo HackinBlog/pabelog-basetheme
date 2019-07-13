@@ -1,3 +1,4 @@
 node_modules
 package-lock.json
 cljs/node_modules
+assets/js/cljs
