@@ -101,6 +101,7 @@ function remove_frontend_scripts() {
 	$fe_scripts = array(
 		'jquery',
 		'wp-embed',
+		'skip-links',
 	);
 
 	foreach ( $fe_scripts as $fe_script ) {
