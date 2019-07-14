@@ -129,10 +129,10 @@ function inject_footer_scripts() {
 	?>
 
         <script type="application/javascript" src="<?php echo CHILD_THEME_URI; ?>/assets/js/cljs/cljs-base.js"></script>
-        <script type="application/javascript" src="<?php echo CHILD_THEME_URI; ?>/assets/js/cljs/hamburger-menu.js"></script>
+        <script type="application/javascript" src="<?php echo CHILD_THEME_URI; ?>/assets/js/cljs/header-hamburger-menu.js"></script>
         <script type="application/javascript" src="<?php echo CHILD_THEME_URI; ?>/assets/js/cljs/footer-subscription-form.js"></script>
         <script type="application/javascript">
-            com.clupclup.app_script.modules.hamburger_menu.render();
+            com.clupclup.app_script.modules.header_hamburger_menu.render();
             com.clupclup.app_script.modules.footer_subscription_form.render();
         </script>
 
@@ -142,9 +142,9 @@ function inject_footer_scripts() {
 
         ?>
 
-        <script type="application/javascript" src="<?php echo CHILD_THEME_URI; ?>/assets/js/cljs/home-subscription-form.js"></script>
+        <script type="application/javascript" src="<?php echo CHILD_THEME_URI; ?>/assets/js/cljs/body-subscription-form.js"></script>
         <script type="application/javascript">
-            com.clupclup.app_script.modules.home_subscription_form.render();
+            com.clupclup.app_script.modules.body_subscription_form.render();
         </script>
 
         <?php

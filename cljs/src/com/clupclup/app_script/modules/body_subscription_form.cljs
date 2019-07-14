@@ -1,4 +1,4 @@
-(ns com.clupclup.app-script.modules.home-subscription-form
+(ns com.clupclup.app-script.modules.body-subscription-form
   (:require [reagent.core :as r]
             [re-frame.core :as rf]
             [com.clupclup.app-script.components.subscription-form :refer [SubscriptionForm]]

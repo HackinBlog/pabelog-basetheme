@@ -2,7 +2,7 @@
 
 (defn log [& messages]
   (when goog/DEBUG
-    (apply js/console messages)))
+    (apply js/console.log messages)))
 
 
 

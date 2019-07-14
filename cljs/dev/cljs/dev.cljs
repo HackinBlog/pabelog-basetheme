@@ -10,11 +10,11 @@
 (defmethod render* "footer-subscription-form" [_]
   ((resolve 'com.clupclup.app-script.modules.footer-subscription-form/render)))
 
-(defmethod render* "hamburger-menu" [_]
-  ((resolve 'com.clupclup.app-script.modules.hamburger-menu/render)))
+(defmethod render* "header-hamburger-menu" [_]
+  ((resolve 'com.clupclup.app-script.modules.header-hamburger-menu/render)))
 
-(defmethod render* "home-subscription-form" [_]
-  ((resolve 'com.clupclup.app-script.modules.home-subscription-form/render)))
+(defmethod render* "body-subscription-form" [_]
+  ((resolve 'com.clupclup.app-script.modules.body-subscription-form/render)))
 
 (defmethod render* :default [_] :noop)
 
@@ -42,6 +42,6 @@
     (js/console.log "Done!")))
 
 (defn ^:dev/after-load reset-all []
-  (reset-all* ["dev" "footer-subscription-form" "hamburger-menu" "home-subscription-form"]))
+  (reset-all* ["dev" "footer-subscription-form" "header-hamburger-menu" "body-subscription-form"]))
 
 (defn ^:export init [] (reset))

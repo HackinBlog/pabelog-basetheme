@@ -210,13 +210,12 @@ function do_child_main_menu() {
 
 	$child_main_menu_attrs = array(
 		'id'    => 'child_main_menu',
-		'class' => 'icon-menu f2 mr3 pointer',
 	);
 
 
 	genesis_markup(
 		array(
-			'open'    => sprintf( '<i %s>', genesis_attr( 'child-main-menu', $child_main_menu_attrs ) ),
+			'open'    => sprintf( '<div %s>', genesis_attr( 'child-main-menu', $child_main_menu_attrs ) ),
 			'context' => 'child-main-menu',
 		)
 	);
@@ -224,7 +223,7 @@ function do_child_main_menu() {
 
 	genesis_markup(
 		array(
-			'open'    => '</i>',
+			'open'    => '</div>',
 			'context' => 'child-main-menu',
 		)
 	);
