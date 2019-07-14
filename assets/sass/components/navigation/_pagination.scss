@@ -1,6 +1,8 @@
 /* Pagination
 --------------------------------------------- */
 
+@import "../../utilities/variables/colors";
+
 .pagination {
   clear: both;
   margin: 60px 0;
@@ -33,9 +35,13 @@
   text-decoration: none;
 }
 
-.archive-pagination li a:focus,
-.archive-pagination li a:hover,
 .archive-pagination li.active a {
   background-color: #333;
-  color: #fff;
+  color: $white;
+}
+
+.archive-pagination li a:focus,
+.archive-pagination li a:hover {
+  background-color: $google_red;
+  color: $white;
 }

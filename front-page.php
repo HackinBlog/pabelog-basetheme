@@ -51,7 +51,7 @@ function do_main_content() {
 	genesis_markup(
 		array(
 			'open'    => sprintf( '<section %s>', genesis_attr( 'main-content', array(
-				'class' => 'main-content ph3 ph0-ns'
+				'class' => 'main-content ph3 ph0-l'
 			) ) ),
 			'context' => 'main-content',
 		)
@@ -66,7 +66,7 @@ function do_main_content() {
 		'yellow' => '9',
 	);
 
-	echo '<ul class="contents flex flex-column flex-row-ns">';
+	echo '<ul class="contents flex flex-wrap">';
 
 	foreach ( $main_contents_by_category as $category_color => $category_id ) {
 		content_by_category_component( $category_id, $category_color );
@@ -108,7 +108,7 @@ function content_by_category_component( $category_id, $category_color = 'white' 
 			'color'   => $category_color,
 		);
 
-		echo '<li class="contant-category">';
+		echo '<li class="contant-category w-100 w-50-m w-25-l">';
 
 		home_category_image( $home_category );
 
@@ -224,7 +224,7 @@ function home_posts_box( $arr_posts, $home_category ) {
 
 				echo '<h2 class="f3 fw6 lh-title mt3 mb0">';
 				echo_post_link( $anchor_synamic_ctx, $post, array(
-					'class' => 'dark-gray hover-link-1 no-underline'
+					'class' => 'dark-gray hover-color-1 no-underline'
 				) );
 				echo '</h2>';
 
@@ -232,9 +232,9 @@ function home_posts_box( $arr_posts, $home_category ) {
 
 			} else {
 
-				echo '<h2 class="dark-gray f3 fw6 lh-title hover-link-1 mt3 mb3">';
+				echo '<h2 class="dark-gray f3 fw6 lh-title hover-color-1 mt3 mb3">';
 				echo_post_link( $anchor_synamic_ctx, $post, array(
-					'class' => 'dark-gray hover-link-1 no-underline'
+					'class' => 'dark-gray hover-color-1 no-underline'
 				) );
 				echo '</h2>';
 
@@ -245,9 +245,9 @@ function home_posts_box( $arr_posts, $home_category ) {
 
 			if ( $home_post_tags ) {
 
-				echo '<h2 class="dark-gray f4 fw5 lh-title hover-link-1 mt3 mb0">';
+				echo '<h2 class="dark-gray f4 fw5 lh-title hover-color-1 mt3 mb0">';
 				echo_post_link( $anchor_synamic_ctx, $post, array(
-					'class' => 'dark-gray hover-link-1 no-underline'
+					'class' => 'dark-gray hover-color-1 no-underline'
 				) );
 				echo '</h2>';
 
@@ -255,9 +255,9 @@ function home_posts_box( $arr_posts, $home_category ) {
 
 			} else {
 
-				echo '<h2 class="dark-gray f4 fw5 lh-title hover-link-1 mt3 mb3">';
+				echo '<h2 class="dark-gray f4 fw5 lh-title hover-color-1 mt3 mb3">';
 				echo_post_link( $anchor_synamic_ctx, $post, array(
-					'class' => 'dark-gray hover-link-1 no-underline'
+					'class' => 'dark-gray hover-color-1 no-underline'
 				) );
 				echo '</h2>';
 
@@ -274,7 +274,7 @@ function home_posts_box( $arr_posts, $home_category ) {
         <div class="mt3">
             <a href="<?php echo $home_category['url']; ?>"
                title="<?php echo $home_category['label']; ?>"
-               class="dark-gray f5 lh-title no-underline hover-link-1">
+               class="dark-gray f5 lh-title no-underline hover-color-1">
                 <span>Semua di <b><?php echo $home_category['label']; ?></b> <i class="icon-arrow-right gold"></i></span>
             </a>
         </div>
@@ -321,7 +321,7 @@ function echo_post_tag( $home_tags = array() ) {
 		?>
 
         <a href="<?php echo get_tag_link( $tag->term_id ); ?>"
-           class="no-underline gray hover-link-2"
+           class="no-underline gray hover-color-2"
            title="Semua post dengan tag <?php echo $tag->name; ?>"><?php echo $tag->name; ?>
         </a>
 
@@ -349,7 +349,7 @@ function do_secondary_content() {
 	genesis_markup(
 		array(
 			'open'    => sprintf( '<section %s>', genesis_attr( 'secondary-content', array(
-				'class' => 'secondary-content ph3 ph0-ns'
+				'class' => 'secondary-content ph3 ph0-l'
 			) ) ),
 			'context' => 'secondary-content',
 		)
@@ -359,7 +359,7 @@ function do_secondary_content() {
 
 	secondary_content_title( "Masih Hangat dari Oven" );
 
-	echo '<div class="flex flex-column flex-row-ns mt4">';
+	echo '<div class="flex flex-column flex-row-l mt4">';
 
 	post_content_loop();
 
@@ -419,7 +419,7 @@ function post_content_loop() {
                         <h2 class="f3 fw6 lh-title <?php echo $mb; ?>">
                             <a href="<?php the_permalink(); ?>"
                                title="<?php the_title(); ?>"
-                               class="dark-gray hover-link-1"
+                               class="dark-gray hover-color-1"
                             >
 								<?php the_title(); ?>
                             </a>
@@ -456,26 +456,24 @@ function featured_content_loop( $post_id ) {
 
 	?>
 
-    <div class="featured-content w-100 flex flex-column flex-row-ns mb2 mb4-ns">
-        <div class="entry-image w-100 w-50-ns mr3-ns">
+    <div class="featured-content w-100 flex flex-column flex-row-l mb2 mb4-ns">
+        <div class="entry-image w-100 w-50-l mr3-ns">
 
 			<?php
-
 
 			echo get_the_post_thumbnail( $post_id, 'Medium Rectangle', array(
 				'class' => 'ba b--light-gray br2',
 			) );
 
-
 			?>
 
         </div>
-        <div class="entry-text w-100 w-50-ns mh2-ns">
+        <div class="entry-text w-100 w-50-l mh2-ns">
             <div class="entry-title">
                 <h2 class="fw7 f2 lh-title">
                     <a href="<?php the_permalink(); ?>"
                        title="<?php the_title(); ?>"
-                       class="dark-gray hover-link-1">
+                       class="dark-gray hover-color-1">
 						<?php the_title(); ?>
                     </a>
                 </h2>
@@ -514,7 +512,7 @@ function home_page_widget_2() {
 	if ( is_active_sidebar( 'home-page-widget-2' ) ) {
 
 		genesis_widget_area( 'home-page-widget-2', array(
-			'before' => '<div class="home-page-widget-2 w-100 w-25-l ma0 ml3-ns tc tr-l">',
+			'before' => '<div class="home-page-widget-2 w-100 w-25-l ma0 ml3-ns tc tr-l db dn-m">',
 			'after'  => '</div>',
 		) );
 

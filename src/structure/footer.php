@@ -27,7 +27,7 @@ function do_child_footer() {
 
 	echo '<div class="footer-container">';
 
-	echo '<div class="footer-widgets"><div class="screen-container ph2 pt3 pb4 flex flex-column flex-row-ns">';
+	echo '<div class="footer-widgets pa3 pa0-l"><div class="screen-container ph2 pt3 pb4 flex flex-column flex-row-l">';
 
 	child_footer_widget_1();
 
@@ -35,7 +35,7 @@ function do_child_footer() {
 
 	echo '</div></div>';
 
-	echo '<div class="footer-attribution">';
+	echo '<div class="footer-attribution pa3 pa0-l">';
 
 	footer_attribution();
 
@@ -58,7 +58,7 @@ function child_footer_widget_1() {
 	if ( is_active_sidebar( 'footer-widget-1' ) ) {
 
 		genesis_widget_area( 'footer-widget-1', array(
-			'before' => '<div class="footer-widget-1 w-100 w-40-ns mr0 mr6-ns">',
+			'before' => '<div class="footer-widget-1 w-100 w-40-l mr0 mr6-l">',
 			'after'  => '</div>',
 		) );
 
@@ -79,7 +79,7 @@ function child_footer_widget_2() {
 	if ( is_active_sidebar( 'footer-widget-2' ) ) {
 
 		genesis_widget_area( 'footer-widget-2', array(
-			'before' => '<div class="footer-widget-2 w-100 w-60-ns pt0 pt5-ns">',
+			'before' => '<div class="footer-widget-2 w-100 w-60-l pt0 pt5-ns">',
 			'after'  => '</div>',
 		) );
 
@@ -101,10 +101,13 @@ function footer_attribution() {
 
     <nav class="footer-att-menu">
         <div class="screen-container flex flex-column flex-row-ns pa2 items-center">
-            <div class="mr0 mr3-ns"><b>Logo Goes Here</b></div>
+            <div class="mr0 mr3-ns mb3 mb0-ns tc tl-ns"><b>Logo Goes Here</b></div>
             <div class="f5 lh-copy">
-                <span>&copy; Copyright <?php echo date( "Y" ); ?> <a href="/" class="fw5 black no-underline">ClupClup.com</a> | <em>Made with <i
-                                class="icon-heart red"></i> in Jakarta</em></span>
+                <span class="db di-ns tc tl-ns">&copy; Copyright <?php echo date( "Y" ); ?> <a href="/" class="fw5 black no-underline">ClupClup.com</a> </span>
+                <span class="dn di-ns">|</span>
+                <span class="db di-ns tc tl-ns">
+                    <em>Made with <i class="icon-heart red"></i> in Jakarta</em>
+                </span>
             </div>
         </div>
     </nav>
@@ -129,8 +132,8 @@ function inject_footer_scripts() {
         <script type="application/javascript" src="<?php echo CHILD_THEME_URI; ?>/assets/js/cljs/hamburger-menu.js"></script>
         <script type="application/javascript" src="<?php echo CHILD_THEME_URI; ?>/assets/js/cljs/footer-subscription-form.js"></script>
         <script type="application/javascript">
-            com.clupclup.app_script.hamburger_menu.render();
-            com.clupclup.app_script.footer_subscription_form.render();
+            com.clupclup.app_script.modules.hamburger_menu.render();
+            com.clupclup.app_script.modules.footer_subscription_form.render();
         </script>
 
 	<?php
@@ -141,7 +144,7 @@ function inject_footer_scripts() {
 
         <script type="application/javascript" src="<?php echo CHILD_THEME_URI; ?>/assets/js/cljs/home-subscription-form.js"></script>
         <script type="application/javascript">
-            com.clupclup.app_script.home_subscription_form.render();
+            com.clupclup.app_script.modules.home_subscription_form.render();
         </script>
 
         <?php

@@ -274,7 +274,6 @@ textarea {
 
 input:focus,
 textarea:focus {
-  border: 1px solid #999;
   outline: none; }
 
 input[type="checkbox"],
@@ -310,10 +309,7 @@ input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"],
 .button {
-  background-color: #333;
   border: 0;
-  border-radius: 5px;
-  color: #fff;
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
@@ -337,7 +333,7 @@ input[type="submit"]:hover,
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"]:hover,
 .button:focus,
 .button:hover {
-  background-color: #0073e5;
+  background-color: #ea4335;
   border-width: 0;
   color: #fff; }
 

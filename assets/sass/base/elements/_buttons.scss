@@ -1,6 +1,8 @@
 /* Buttons
 --------------------------------------------- */
 
+@import "../../utilities/variables/colors";
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -8,10 +10,10 @@ input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"],
 .button {
-  background-color: #333;
+  //background-color: #333;
   border: 0;
-  border-radius: 5px;
-  color: #fff;
+  //border-radius: 5px;
+  //color: #fff;
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
@@ -36,7 +38,7 @@ input[type="submit"]:hover,
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"]:hover,
 .button:focus,
 .button:hover {
-  background-color: #0073e5;
+  background-color: $google_red;
   border-width: 0;
   color: #fff;
 }

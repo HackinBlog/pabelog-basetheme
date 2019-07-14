@@ -31,14 +31,26 @@
 
 }
 
-a.hover-link-1:hover {
-  color: $google_red;
+.hover-color-1:hover {
+  color: $google_red !important;
 }
 
-a.hover-link-2:hover {
-  color: $absolute-black;
+.hover-color-2:hover {
+  color: $absolute-black !important;
 }
 
-a.hover-link-3:hover {
-  color: $google_yellow;
+.hover-color-3:hover {
+  color: $google_yellow !important;
+}
+
+.hover-bg-1:hover {
+  background-color: $google_red !important;
+}
+
+.hover-bg-2:hover {
+  background-color: $absolute-black !important;
+}
+
+.hover-bg-3:hover {
+  background-color: $google_yellow !important;
 }

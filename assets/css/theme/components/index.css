@@ -356,10 +356,13 @@ img.alignright,
   padding: 8px 12px;
   text-decoration: none; }
 
-.archive-pagination li a:focus,
-.archive-pagination li a:hover,
 .archive-pagination li.active a {
   background-color: #333;
+  color: #fff; }
+
+.archive-pagination li a:focus,
+.archive-pagination li a:hover {
+  background-color: #ea4335;
   color: #fff; }
 
 /* Search Forms
@@ -564,14 +567,23 @@ a.home-cat-link {
   .entry-pings {
     margin-bottom: 60px; } }
 
-a.hover-link-1:hover {
-  color: #ea4335; }
+.hover-color-1:hover {
+  color: #ea4335 !important; }
 
-a.hover-link-2:hover {
-  color: #000; }
+.hover-color-2:hover {
+  color: #000 !important; }
 
-a.hover-link-3:hover {
-  color: #fbbc05; }
+.hover-color-3:hover {
+  color: #fbbc05 !important; }
+
+.hover-bg-1:hover {
+  background-color: #ea4335 !important; }
+
+.hover-bg-2:hover {
+  background-color: #000 !important; }
+
+.hover-bg-3:hover {
+  background-color: #fbbc05 !important; }
 
 /* Sidebar
 ---------------------------------------------------------------------------- */

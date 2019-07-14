@@ -141,7 +141,7 @@ function do_header_first() {
 function do_header_second() {
 
 	$header_second_attrs = array(
-		'class' => 'header-second flex dn db-ns w-30-ns',
+		'class' => 'header-second flex dn db-ns w-30-l',
 	);
 
 	genesis_markup(

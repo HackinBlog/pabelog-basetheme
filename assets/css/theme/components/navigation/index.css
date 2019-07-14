@@ -250,8 +250,11 @@
   padding: 8px 12px;
   text-decoration: none; }
 
-.archive-pagination li a:focus,
-.archive-pagination li a:hover,
 .archive-pagination li.active a {
   background-color: #333;
+  color: #fff; }
+
+.archive-pagination li a:focus,
+.archive-pagination li a:hover {
+  background-color: #ea4335;
   color: #fff; }

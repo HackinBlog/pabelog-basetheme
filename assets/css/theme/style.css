@@ -292,7 +292,6 @@ textarea {
 
 input:focus,
 textarea:focus {
-  border: 1px solid #999;
   outline: none; }
 
 input[type="checkbox"],
@@ -328,10 +327,7 @@ input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"],
 .button {
-  background-color: #333;
   border: 0;
-  border-radius: 5px;
-  color: #fff;
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
@@ -355,7 +351,7 @@ input[type="submit"]:hover,
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"]:hover,
 .button:focus,
 .button:hover {
-  background-color: #0073e5;
+  background-color: #ea4335;
   border-width: 0;
   color: #fff; }
 
@@ -991,10 +987,13 @@ img.alignright,
   padding: 8px 12px;
   text-decoration: none; }
 
-.archive-pagination li a:focus,
-.archive-pagination li a:hover,
 .archive-pagination li.active a {
   background-color: #333;
+  color: #fff; }
+
+.archive-pagination li a:focus,
+.archive-pagination li a:hover {
+  background-color: #ea4335;
   color: #fff; }
 
 /* Search Forms
@@ -1199,14 +1198,23 @@ a.home-cat-link {
   .entry-pings {
     margin-bottom: 60px; } }
 
-a.hover-link-1:hover {
-  color: #ea4335; }
+.hover-color-1:hover {
+  color: #ea4335 !important; }
 
-a.hover-link-2:hover {
-  color: #000; }
+.hover-color-2:hover {
+  color: #000 !important; }
 
-a.hover-link-3:hover {
-  color: #fbbc05; }
+.hover-color-3:hover {
+  color: #fbbc05 !important; }
+
+.hover-bg-1:hover {
+  background-color: #ea4335 !important; }
+
+.hover-bg-2:hover {
+  background-color: #000 !important; }
+
+.hover-bg-3:hover {
+  background-color: #fbbc05 !important; }
 
 /* Sidebar
 ---------------------------------------------------------------------------- */

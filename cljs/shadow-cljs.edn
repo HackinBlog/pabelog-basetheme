@@ -10,16 +10,16 @@
 
  :builds       {:app {:target        :browser
                       :module-loader true
-                      :modules       {:cljs-base                {}
-                                      :footer-subscription-form {:entries    [com.clupclup.app-script.footer-subscription-form]
+                      :modules       {:cljs-base                {:entries    [com.clupclup.app-script.base]}
+                                      :footer-subscription-form {:entries    [com.clupclup.app-script.modules.footer-subscription-form]
                                                                  :depends-on #{:cljs-base}}
-                                      :home-subscription-form   {:entries    [com.clupclup.app-script.home-subscription-form]
+                                      :home-subscription-form   {:entries    [com.clupclup.app-script.modules.home-subscription-form]
                                                                  :depends-on #{:cljs-base}}
-                                      :hamburger-menu           {:entries    [com.clupclup.app-script.hamburger-menu]
+                                      :hamburger-menu           {:entries    [com.clupclup.app-script.modules.hamburger-menu]
                                                                  :depends-on #{:cljs-base}}
                                       :dev                      {:entries    [cljs.dev]
                                                                  :depends-on #{:cljs-base}
-                                                                 :init-fn    cljs.dev/init}}
+                                                                 :init-fn    cljs.dev/reset-all}}
                       :output-dir    "../assets/js/cljs"
                       :asset-path    "/wp-content/themes/basetheme/assets/js/cljs"
 
@@ -32,8 +32,8 @@
                                       :http-handler shadow.http.push-state/handle
                                       :http-port    8700
                                       :devtools-url "http://localhost:9630"
-                                      :before-load   cljs.user/reset-all
-                                      :after-load   cljs.user/reset-all
-                                      ;;:autoload     true
+                                      ;:before-load   cljs.user/reset-all
+                                      ;:after-load    cljs.user/reset-all
+                                      :autoload     true
                                       :preloads     [devtools.preload
                                                      day8.re-frame-10x.preload]}}}}
