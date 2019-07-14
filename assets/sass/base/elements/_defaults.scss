@@ -2,6 +2,7 @@
 --------------------------------------------- */
 
 @import "../../utilities/variables/base";
+@import "../../utilities/variables/colors";
 
 html {
   -moz-osx-font-smoothing: grayscale;
@@ -22,7 +23,7 @@ body {
 
 
 a {
-  color: #0073e5;
+  color: $google_red;
   text-decoration: underline;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
