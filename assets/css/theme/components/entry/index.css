@@ -52,6 +52,11 @@ p.entry-meta {
 
 /* Entry Titles
 --------------------------------------------- */
+/*
+
+    VARIABLES
+
+*/
 .archive-description .entry-title,
 .archive-title,
 .author-box-title {
@@ -59,17 +64,13 @@ p.entry-meta {
   font-weight: 600;
   margin-bottom: 10px; }
 
-.entry-title {
-  font-size: 30px;
-  margin-bottom: 10px; }
-
 .entry-title a {
-  color: #333;
+  color: rgba(0, 0, 0, 0.7);
   text-decoration: none; }
 
 .entry-title a:focus,
 .entry-title a:hover {
-  color: #0073e5; }
+  color: #ea4335; }
 
 .author-box p:last-child {
   margin-bottom: 0; }

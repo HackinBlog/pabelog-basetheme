@@ -49,7 +49,7 @@ function load_non_admin_files() {
 		'/structure/footer.php',
 		'/structure/header.php',
 		'/structure/menu.php',
-		'/structure/post.php',
+		'/structure/entry.php',
 		'/structure/sidebar.php',
 		'/components/customizer/customizer.php',
 		'/components/gutenberg/init.php',

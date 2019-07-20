@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "create-react-class": "^15.6.3",
+    "disqus-react": "^1.0.6",
     "highlight.js": "^9.15.8",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

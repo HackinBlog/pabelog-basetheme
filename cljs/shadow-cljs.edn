@@ -18,6 +18,8 @@
                                                                  :depends-on #{:cljs-base}}
                                       :header-hamburger-menu    {:entries    [com.clupclup.app-script.modules.header-hamburger-menu]
                                                                  :depends-on #{:cljs-base}}
+                                      :body-disqus-thread       {:entries    [com.clupclup.app-script.modules.body-disqus-thread]
+                                                                 :depends-on #{:cljs-base}}
                                       :dev                      {:entries    [cljs.dev]
                                                                  :depends-on #{:cljs-base}
                                                                  :init-fn    cljs.dev/reset-all}}

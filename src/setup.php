@@ -103,6 +103,8 @@ function unregister_genesis_callbacks() {
 	// Removes header right widget area.
 	unregister_sidebar( 'header-right' );
 
+	unregister_sidebar( 'sidebar' );
+
 	// Removes secondary sidebar.
 	unregister_sidebar( 'sidebar-alt' );
 

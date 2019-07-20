@@ -97,10 +97,12 @@ img.alignright,
 .site-header {
   background-color: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-  padding: 0 30px;
-  position: fixed;
-  width: 100%;
-  z-index: 9999; }
+  padding: 0 30px; }
+  @media only screen and (min-width: 960px) {
+    .site-header {
+      position: fixed;
+      width: 100%;
+      z-index: 9999; } }
 
 /* Genesis Menu
 ---------------------------------------------------------------------------- */
@@ -362,6 +364,11 @@ p.entry-meta {
 
 /* Entry Titles
 --------------------------------------------- */
+/*
+
+    VARIABLES
+
+*/
 .archive-description .entry-title,
 .archive-title,
 .author-box-title {
@@ -369,17 +376,13 @@ p.entry-meta {
   font-weight: 600;
   margin-bottom: 10px; }
 
-.entry-title {
-  font-size: 30px;
-  margin-bottom: 10px; }
-
 .entry-title a {
-  color: #333;
+  color: rgba(0, 0, 0, 0.7);
   text-decoration: none; }
 
 .entry-title a:focus,
 .entry-title a:hover {
-  color: #0073e5; }
+  color: #ea4335; }
 
 .author-box p:last-child {
   margin-bottom: 0; }
@@ -553,62 +556,20 @@ a.home-cat-link {
   color: #333;
   text-decoration: none; }
 
-/* Entry Comments
---------------------------------------------- */
-.comment-respond,
-.entry-comments,
-.entry-pings {
-  margin-bottom: 40px; }
+/**
+ *
+ * Comments
+ * ====================
+ *
+ */
+div#disqus_thread {
+  margin-bottom: 60px; }
 
-.comment-list li {
-  padding: 40px 0 0 30px; }
-
-.comment-list .depth-1 {
-  padding-left: 0; }
-
-.comment-header {
-  margin-bottom: 30px; }
-
-.comment-content {
-  clear: both; }
-
-.comment-content ul > li {
-  list-style-type: disc; }
-
-.comment-respond input[type="email"],
-.comment-respond input[type="text"],
-.comment-respond input[type="url"] {
-  width: 50%; }
-
-.comment-respond label {
-  display: block;
-  margin-right: 12px; }
-
-.comment-header p {
-  margin-bottom: 0; }
-
-.entry-pings .reply {
-  display: none; }
-
-.comment-form-cookies-consent label {
-  display: inline;
-  padding-left: 10px; }
-
-/* Avatar
---------------------------------------------- */
-.avatar {
-  border-radius: 50%;
-  float: left; }
-
-.author-box .avatar,
-.alignleft .avatar {
-  margin-right: 20px; }
-
-.alignright .avatar {
-  margin-left: 20px; }
-
-.comment .avatar {
-  margin: 0 15px 20px 0; }
+button#dcl_comment_btn {
+  background-image: url("/wp-content/themes/basetheme/assets/images/show-comments.png");
+  background-repeat: no-repeat;
+  background-position: 75%;
+  background-size: 70px; }
 
 /* Site Footer
 ---------------------------------------------------------------------------- */

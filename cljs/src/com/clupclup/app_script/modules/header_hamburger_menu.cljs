@@ -72,6 +72,11 @@
                 :className "mt3 flex flex-column"}]
          (map MenuItem children))])
 
+(defn CloseButton [{:keys [onClick]}]
+  [:button {:className "db dn-l white f2 pointer bg-dark-gray outline-0 absolute top-0 right-0"
+            :onClick onClick}
+   [:i {:className "icon-x"}]])
+
 (def Root
   (r/create-class
     {:component-will-mount
@@ -80,21 +85,25 @@
      :reagent-render
      (fn []
        (let [open? (db/get-in [::react-burger-menu ::open?])
-             menus (db/get-in [::react-burger-menu ::ajax ::ok :items])]
+             menus (db/get-in [::react-burger-menu ::ajax ::ok :items])
+             onClickMenu #(db/update-in! [::react-burger-menu ::open?] not)]
          [:<>
-          [:i {:onClick   #(db/update-in! [::react-burger-menu ::open?] not)
+          [:i {:onClick   onClickMenu
                :className (if open? "icon-x f2 mr3 pointer" "icon-menu f2 mr3 pointer")}]
           [Dialog {:id               "child_main_menu"
                    :className        "w-100 w-80-m w-50-l outline-0"
                    :contentLabel     "onRequestClose Example"
-                   :overlayClassName "fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-999 bg-dark-gray"
+                   :overlayClassName "fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-999 bg-dark-gray relative"
                    :isOpen           (or open? false)}
+           [CloseButton {:onClick onClickMenu}]
            (if (db/get-in [::react-burger-menu ::ajax ::loading?])
              [:span "Loading..."]
              (if (db/get-in [::react-burger-menu ::ajax ::ok])
-               (into [:nav {:aria-labelledby "primary-navigation"
-                            :className "flex flex-wrap w-100 vh-75 h-auto-l overflow-auto overflow-hidden-l"}]
-                     (map MenuGroup menus))))]]))}))
+               [:div {:className "center"}
+
+                (into [:nav {:aria-labelledby "primary-navigation"
+                             :className "flex flex-wrap w-100 vh-75 h-auto-l overflow-auto overflow-hidden-l tl"}]
+                      (map MenuGroup menus))]))]]))}))
 
 (defn ^:export render []
   (base.render/render "child_main_menu" Root))

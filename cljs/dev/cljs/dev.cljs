@@ -16,6 +16,9 @@
 (defmethod render* "body-subscription-form" [_]
   ((resolve 'com.clupclup.app-script.modules.body-subscription-form/render)))
 
+(defmethod render* "body-disqus-thread" [_]
+  ((resolve 'com.clupclup.app-script.modules.body-disqus-thread/render)))
+
 (defmethod render* :default [_] :noop)
 
 (defn ^:export render [module]
@@ -42,6 +45,6 @@
     (js/console.log "Done!")))
 
 (defn ^:dev/after-load reset-all []
-  (reset-all* ["dev" "footer-subscription-form" "header-hamburger-menu" "body-subscription-form"]))
+  (reset-all* ["dev" "footer-subscription-form" "header-hamburger-menu" "body-subscription-form" "body-disqus-thread"]))
 
 (defn ^:export init [] (reset))

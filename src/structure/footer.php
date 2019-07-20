@@ -151,4 +151,15 @@ function inject_footer_scripts() {
 
     }
 
+//    if ( is_single() ) {
+//
+//        ?>
+<!--        <script type="application/javascript" src="--><?php //echo CHILD_THEME_URI; ?><!--/assets/js/cljs/body-disqus-thread.js"></script>-->
+<!--        <script type="application/javascript">-->
+<!--            com.clupclup.app_script.modules.body_disqus_thread.render();-->
+<!--        </script>-->
+<!--        --><?php
+//
+//    }
+
 }
