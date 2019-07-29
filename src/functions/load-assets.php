@@ -128,7 +128,10 @@ if ( ! is_admin() ) {
  * @since 1.0.1
  */
 function remove_frontend_styles() {
-	$fe_styles = array('jetpack_css');
+
+	add_filter( 'jetpack_implode_frontend_css', '__return_false', 99 );
+
+	$fe_styles = array();
 
 	foreach ( $fe_styles as $fe_style ) {
 		wp_deregister_style( $fe_style );
