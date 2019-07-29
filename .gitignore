@@ -2,7 +2,7 @@
 *yarn.lock
 node_modules
 cljs/node_modules
-assets/js/cljs/
+assets/js/cljs/*
 !assets/js/cljs/body-disqus-thread.js
 !assets/js/cljs/body-subscription-form.js
 !assets/js/cljs/cljs-base.js
