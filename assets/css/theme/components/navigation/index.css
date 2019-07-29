@@ -1,3 +1,6 @@
+.ReactModal__Body--open {
+  overflow: hidden; }
+
 /* Genesis Menu
 ---------------------------------------------------------------------------- */
 /* Breadcrumb

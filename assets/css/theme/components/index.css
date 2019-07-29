@@ -104,6 +104,9 @@ img.alignright,
       width: 100%;
       z-index: 9999; } }
 
+.ReactModal__Body--open {
+  overflow: hidden; }
+
 /* Genesis Menu
 ---------------------------------------------------------------------------- */
 /* Breadcrumb
