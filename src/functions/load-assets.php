@@ -99,6 +99,8 @@ if ( ! is_admin_bar_showing() ) {
 function remove_frontend_scripts() {
 
 	$fe_scripts = array(
+		'devicepx',
+		'photon',
 		'jquery',
 		'wp-embed',
 		'skip-links',
@@ -126,7 +128,7 @@ if ( ! is_admin() ) {
  * @since 1.0.1
  */
 function remove_frontend_styles() {
-	$fe_styles = array();
+	$fe_styles = array('jetpack_css');
 
 	foreach ( $fe_styles as $fe_style ) {
 		wp_deregister_style( $fe_style );
