@@ -129,18 +129,19 @@ if ( ! is_admin() ) {
  */
 function remove_frontend_styles() {
 
-	$fe_styles = array('AtD_style', 'jetpack_likes', 'jetpack_related-posts', 'jetpack-carousel',
-		'grunion.css', 'the-neverending-homepage', 'infinity-twentyten', 'infinity-twentyeleven',
-		'infinity-twentytwelve', 'noticons', 'post-by-email', 'publicize', 'sharedaddy', 'sharing',
-		'stats_reports_css', 'jetpack-widgets', 'jetpack-slideshow', 'presentations', 'jetpack-subscriptions',
-		'tiled-gallery', 'widget-conditions', 'jetpack_display_posts_widget', 'gravatar-profile-widget',
-		'widget-grid-and-list', 'jetpack-widgets');
+	$fe_styles = array(
+//		'AtD_style', 'jetpack_likes', 'jetpack_related-posts', 'jetpack-carousel',
+//		'grunion.css', 'the-neverending-homepage', 'infinity-twentyten', 'infinity-twentyeleven',
+//		'infinity-twentytwelve', 'noticons', 'post-by-email', 'publicize', 'sharedaddy', 'sharing',
+//		'stats_reports_css', 'jetpack-widgets', 'jetpack-slideshow', 'presentations', 'jetpack-subscriptions',
+//		'tiled-gallery', 'widget-conditions', 'jetpack_display_posts_widget', 'gravatar-profile-widget',
+//		'widget-grid-and-list', 'jetpack-widgets'
+	);
 
 	foreach ( $fe_styles as $fe_style ) {
 		wp_deregister_style( $fe_style );
 	}
 
-	add_filter( 'jetpack_implode_frontend_css', '__return_false' );
 }
 
 add_action( 'wp_print_styles', __NAMESPACE__ . '\add_frontend_styles' );

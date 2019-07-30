@@ -19,3 +19,5 @@ include_once( __DIR__ . '/src/init.php' );
 include_once( __DIR__ . '/src/functions/autoload.php' );
 
 include_once( __DIR__ . '/src/setup.php');
+
+add_filter( 'jetpack_implode_frontend_css', '__return_false' );
