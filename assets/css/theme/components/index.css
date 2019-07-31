@@ -97,15 +97,16 @@ img.alignright,
 .site-header {
   background-color: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-  padding: 0 30px; }
-  @media only screen and (min-width: 960px) {
-    .site-header {
-      position: fixed;
-      width: 100%;
-      z-index: 9999; } }
+  padding: 0 30px;
+  position: fixed;
+  width: 100%;
+  z-index: 9999; }
 
 .ReactModal__Body--open {
   overflow: hidden; }
+
+.ReactModal__Overlay {
+  min-height: 110vh; }
 
 /* Genesis Menu
 ---------------------------------------------------------------------------- */
@@ -567,12 +568,6 @@ a.home-cat-link {
  */
 div#disqus_thread {
   margin-bottom: 60px; }
-
-button#dcl_comment_btn {
-  background-image: url("/wp-content/themes/basetheme/assets/images/show-comments.png");
-  background-repeat: no-repeat;
-  background-position: 75%;
-  background-size: 70px; }
 
 /* Site Footer
 ---------------------------------------------------------------------------- */

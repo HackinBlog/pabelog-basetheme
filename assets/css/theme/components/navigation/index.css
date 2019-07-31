@@ -1,6 +1,9 @@
 .ReactModal__Body--open {
   overflow: hidden; }
 
+.ReactModal__Overlay {
+  min-height: 110vh; }
+
 /* Genesis Menu
 ---------------------------------------------------------------------------- */
 /* Breadcrumb

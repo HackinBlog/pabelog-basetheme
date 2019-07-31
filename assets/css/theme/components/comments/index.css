@@ -6,9 +6,3 @@
  */
 div#disqus_thread {
   margin-bottom: 60px; }
-
-button#dcl_comment_btn {
-  background-image: url("/wp-content/themes/basetheme/assets/images/show-comments.png");
-  background-repeat: no-repeat;
-  background-position: 75%;
-  background-size: 70px; }

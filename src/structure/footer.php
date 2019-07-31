@@ -101,7 +101,7 @@ function footer_attribution() {
 
     <nav class="footer-att-menu">
         <div class="screen-container flex flex-column flex-row-ns pa2 items-center">
-            <div class="mr0 mr3-ns mb3 mb0-ns tc tl-ns"><b>Logo Goes Here</b></div>
+            <div class="mr0 mr3-ns mb3 mb0-ns tc tl-ns"><b>ClupClup</b></div>
             <div class="f5 lh-copy">
                 <span class="db di-ns tc tl-ns">&copy; Copyright <?php echo date( "Y" ); ?> <a href="/" class="fw5 black no-underline">ClupClup.com</a> </span>
                 <span class="dn di-ns">|</span>
